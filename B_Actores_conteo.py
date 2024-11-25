@@ -40,7 +40,7 @@ def count_actores(act_inst):
     act_inst['Conteo'] = act_inst['Conteo'].astype(int)
     # Eliminar duplicados y limpiar espacios extra en 'Actores_limpio'   
     dup = act_inst[act_inst.duplicated()]
-    print(f'\nSe encontraron {len(dup)} duplicados de actores')
+    #print(f'\nSe encontraron {len(dup)} duplicados de actores')
     act_inst['Actores_limpio'] = act_inst['Actores_limpio'].str.replace('  ', ' ', regex=False)
     return act_inst
 
