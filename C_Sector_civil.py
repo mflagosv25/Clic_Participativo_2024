@@ -161,7 +161,7 @@ if __name__ == '__main__':
     data = apply_classification(data)
     # Configurar categoría y organizar los datos
     data = organize_actores(data)
-#%% Guardar el archivo en Excel
+    #%% Guardar el archivo en Excel
     # Eliminar duplicados de la columna [Actores]
     #data.to_excel("Actores_unicos_ini.xlsx", index=False)
     
