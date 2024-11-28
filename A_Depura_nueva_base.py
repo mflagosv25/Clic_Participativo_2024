@@ -24,7 +24,8 @@ def load_data(file_path):
     # =============================================================================
     if not file_path:
         sys.exit("No se cargó el archivo de entrada\nEjecute nuevamente, y cargue un archivo válido")
-    df = pd.read_excel(file_path)
+    nombre_archivo = list(file_path.keys())[0]
+    df = pd.read_excel(nombre_archivo)
     return df
 
 def concat_columns(registro):
