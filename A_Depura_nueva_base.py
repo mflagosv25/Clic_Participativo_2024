@@ -7,6 +7,7 @@ Created on Tue Nov  5 16:16:53 2024
 
 import pandas as pd
 import re
+import sys
 
 # =============================================================================
 # def concatenar_columnas(df, columnas, separador= " "):
@@ -21,6 +22,8 @@ def load_data(file_path):
     #                         "Sector_poblacional","Estado", "Actores", "Alcances", 
     #                         "Funciones", "Categoria"
     # =============================================================================
+    if not file_path:
+        sys.exit("No se cargó el archivo de entrada\nEjecute nuevamente, y cargue un archivo válido")
     df = pd.read_excel(file_path)
     return df
 
