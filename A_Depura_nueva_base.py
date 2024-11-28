@@ -23,7 +23,7 @@ def load_data(file_path):
     #                         "Funciones", "Categoria"
     # =============================================================================
     if not file_path:
-        sys.exit("No se cargó el archivo de entrada\nEjecute nuevamente, y cargue un archivo válido")
+        sys.exit("No se cargó el archivo de entrada\n\tEjecute nuevamente, y cargue un archivo válido")
     nombre_archivo = list(file_path.keys())[0]
     df = pd.read_excel(nombre_archivo)
     return df
