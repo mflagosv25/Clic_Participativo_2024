@@ -156,6 +156,11 @@ def select_columns(df_act_conteo):
     df.rename(columns = {'Actores_limpio':'Actores'}, inplace = True)
     return df
     
+def get_act_unicos_ini(act_conteo):
+    data = select_columns(act_conteo)
+    data = apply_classification(data) # clasificación administrativa y poblacional
+    act_unicos_ini = organize_actores(data) # Configurar categoría y organizar los datos
+    return act_unicos_ini
 #%%
 if __name__ == '__main__':
     df_act_conteo = pd.read_excel('actores_conteo.xlsx')
@@ -166,4 +171,5 @@ if __name__ == '__main__':
     act_unicos_ini = organize_actores(data)
 #%% Guardar el archivo en Excel
     #data.to_excel("Actores_unicos_ini.xlsx", index=False)
+    
     
