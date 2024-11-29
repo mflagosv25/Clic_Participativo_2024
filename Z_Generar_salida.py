@@ -7,9 +7,8 @@ Created on Thu Nov 28 21:59:25 2024
 
 import pandas as pd
 #from openpyxl import Workbook
-
 # Función para guardar DataFrames en un archivo Excel con hojas personalizadas
-def save_dataframes(dataframes = [instancias,act_conteo,act_unicos,sector_actores,sector_instancias,funciones,secretarias], sheet_names):
+def save_dataframes(dataframes, sheet_names):
     """
     Guarda múltiples DataFrames en un archivo Excel con nombres personalizados para las hojas.
 
