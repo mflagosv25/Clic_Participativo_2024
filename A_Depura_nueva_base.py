@@ -115,7 +115,7 @@ def get_instancias(df):
     columns = ["Instancia", "Epigrafe", "Norma", "Objeto", "Sector_administrativo", 
                "Sector_poblacional", "Estado", "Secretarias", "tipo_secretaria",
                "Actores", "Alcances", "Funciones", "Categoria"]
-    instancias[columns] = instancias[columns].applymap(lambda x: str(x).capitalize())
+    instancias[columns] = instancias[columns].map(lambda x: str(x).capitalize())
     return instancias
 
 def get_funciones(instancias):
@@ -146,8 +146,10 @@ def get_secretarias(instancias):
     secretarias = instancias[["Instancia", "Instancia_ID", "tipo_secretaria", "Secretarias"]].copy()
     secretarias = secretarias.assign(Secretarias=secretarias['Secretarias'].str.split(',')).explode('Secretarias')
     secretarias['Secretarias'] = secretarias['Secretarias'].str.strip()
-    secretarias['Secretarias'].fillna("Sin secretaria", inplace=True)
-    secretarias['tipo_secretaria'].fillna("Sin secretaria", inplace=True)
+    #secretarias['Secretarias'].fillna("Sin secretaria", inplace=True)
+    secretarias.fillna({'Secretarias':'Sin secretaria'}, inplace=True)
+    #secretarias['tipo_secretaria'].fillna("Sin secretaria", inplace=True)
+    secretarias.fillna({'tipo_secretaria':'Sin secretaria'}, inplace=True)
     return secretarias
 
 #%%
