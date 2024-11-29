@@ -108,7 +108,12 @@ def cont_plazas(texto):
         if re.search(patt,texto):
             conteo = numero
     return conteo
-    
+def get_act_conteo(df):
+    df_actores = df.copy()
+    act_conteo = b_ac.get_actores_limpio(df_actores)
+    act_conteo = b_ac.clean_actores(act_conteo)
+    act_conteo = b_ac.count_actores(act_conteo)
+    return act_conteo
 #%%
 if __name__ == "__main__":
 #-----------Leer el archivo Excel
