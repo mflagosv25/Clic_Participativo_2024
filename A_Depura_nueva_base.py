@@ -17,10 +17,10 @@ import sys
 def verify_columns(df):
     verified = True
     no_encontradas = []
-    columns_obl = ['Es_IRPC','Año','Tipo','Numero','Objeto','Secretarias',
-                  'tipo_secretaria','Instancia_ID', 'Sector_administrativo', 
-                  'Sector_poblacional','Estado', 'Actores', 'Alcances', 
-                  'Funciones', 'Categoria','Instancia','Epigrafe']
+    columns_obl = ['ids','Nombre','Instancia','Instancia_ID','Año','Tipo','Numero',
+                   'Epigrafe','Es_IRPC','Objeto','Sector_administrativo',
+                   'Sector_poblacional','Estado','Secretarias','tipo_secretaria', 
+                   'Actores', 'Alcances', 'Funciones', 'Categoria']
     columns_in = list(df.columns)
     for columna in columns_obl:
         if columna not in columns_in:
