@@ -107,9 +107,9 @@ def get_instancias(df):
     instancias['Norma'] = instancias[['Tipo','Numero','Año','Objeto']].apply(concat_columns,axis=1)
     # Rellenar valores nulos en columnas específicas
     #instancias['Secretarias'].fillna("Sin secretaria", inplace=True)
-    instancias.fillna('Secretarias': "Sin secretaria"}, inplace=True)
+    instancias.fillna({'Secretarias': "Sin secretaria"}, inplace=True)
     #instancias['tipo_secretaria'].fillna("Sin secretaria", inplace=True)
-    instancias.fillna('tipo_secretaria': "Sin secretaria"}, inplace=True)
+    instancias.fillna({'tipo_secretaria': "Sin secretaria"}, inplace=True)
     instancias['Instancia_ID'] = instancias['Instancia_ID'].apply(lambda x: str(x).upper())
     # Aplicar formato de mayúsculas a columnas específicas
     columns = ["Instancia", "Epigrafe", "Norma", "Objeto", "Sector_administrativo", 
