@@ -102,7 +102,7 @@ def get_instancias(df):
     print("Obteniendo tablas: Instancias, Funciones, Secretarías ...")
     instancias = df[df['Es_IRPC'] == "Si"].copy()
     # Convertir texto a minúsculas y eliminar acentos
-    instancias = instancias.applymap(lambda x: str(x).lower() if isinstance(x, str) else x)
+    instancias = instancias.map(lambda x: str(x).lower() if isinstance(x, str) else x)
     # Modificar columna 'Norma' para tener un formato específico
     instancias['Norma'] = instancias[['Tipo','Numero','Año','Objeto']].apply(concat_columns,axis=1)
     # Rellenar valores nulos en columnas específicas
