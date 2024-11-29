@@ -99,7 +99,7 @@ def remov_enum(column):
     return new_colum
 
 def get_instancias(df):
-    print("Obteniendo tablas: Instancias, Funciones, Secretarías ...")
+    print("\nObteniendo tablas: Instancias, Funciones, Secretarías ...\n")
     instancias = df[df['Es_IRPC'] == "Si"].copy()
     # Convertir texto a minúsculas y eliminar acentos
     instancias = instancias.map(lambda x: str(x).lower() if isinstance(x, str) else x)
