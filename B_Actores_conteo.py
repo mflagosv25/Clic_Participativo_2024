@@ -111,9 +111,9 @@ def cont_plazas(texto):
     
 def get_act_conteo(df):
     df_actores = df.copy()
-    act_conteo = b_ac.get_actores_limpio(df_actores)
-    act_conteo = b_ac.clean_actores(act_conteo)
-    act_conteo = b_ac.count_actores(act_conteo)
+    act_conteo = get_actores_limpio(df_actores)
+    act_conteo = clean_actores(act_conteo)
+    act_conteo = count_actores(act_conteo)
     return act_conteo
 #%%
 if __name__ == "__main__":
